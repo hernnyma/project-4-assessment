@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+
+import CircleSelector from './components/CircleSelector/CircleSelector';
+import Circles from './components/Circles/Circles';
+import { useState } from 'react';
+
 import './App.css';
 
-function App() {
+export default function App() {
+  const [circle, setCircle] = useState("1")
+
+  function numCircle(num) {
+    console.log(num)
+    setCircle(num)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">UNIT 4 FINAL ASSESSMENT</header>
+      <main>
+        <CircleSelector numCircle={numCircle} circle={circle}/>
+        <Circles circle={circle}/>
+      </main>
     </div>
-  );
+);
 }
-
-export default App;
